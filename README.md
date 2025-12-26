@@ -63,8 +63,8 @@ The **BCV Exchange Rate** module integrates official exchange rates from the Cen
 ---
 
 ## Process Flow
-
 ```mermaid
+
 flowchart TD
     A[Start: Scheduled Cron Job / Manual Trigger] --> B[Fetch USD & EUR rates from BCV website]
     B --> |Success| C[Check if rates for today already exist in Odoo]
@@ -74,6 +74,8 @@ flowchart TD
     D --> G[Update systray component with latest rates]
     F --> G
     G --> H[End]
+
+```
 
 ## Benefits
 
