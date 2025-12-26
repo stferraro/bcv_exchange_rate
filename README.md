@@ -111,4 +111,4 @@ flowchart TD
 
 ## Maintenance and Support
 
-For maintenance and support, please contact [soltecferr](https://www.soltecferr.com) or refer to the module's repository for updates and issue tracking or send mail to gerferr83@soltecferr.com. 
+For maintenance and support, please contact [soltecferr](https://www.soltecferr.com), refer to the module's repository for updates and issue tracking, or send an email to gerferr83@soltecferr.com. 
