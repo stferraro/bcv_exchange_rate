@@ -1,6 +1,6 @@
 {
     'name': 'BCV Exchange Rate',
-    'version': '19.0.1.0.1',
+    'version': '19.0.1.0.2',
     'summary': '''
         This module retrieves and updates the official USD and EUR exchange rates published by the 
         Central Bank of Venezuela (BCV), allowing them to be used within Odoo for accounting and 
