@@ -56,3 +56,30 @@ class ResCurrency(models.Model):
                     'company_id': company.id,
                 })
                 _logger.info("Rate created: EUR = %s on %s", eur_rate, today)
+
+    @api.model
+    def exchange_rate_usd_eur(self, company_id=None):
+        self._update_exchange_rates()
+
+        today = fields.Date.today()
+        usd = self.env['res.currency'].search([('name', '=', 'USD')], limit=1)
+        eur = self.env['res.currency'].search([('name', '=', 'EUR')], limit=1)
+
+        usd_rate = self.env['res.currency.rate'].search([
+            ('currency_id', '=', usd.id),
+            ('name', '=', today)
+        ], limit=1).inverse_company_rate if usd else 0.0
+
+        eur_rate = self.env['res.currency.rate'].search([
+            ('currency_id', '=', eur.id),
+            ('name', '=', today)
+        ], limit=1).inverse_company_rate if eur else 0.0
+
+        usd_rate = round(usd_rate, 4)
+        eur_rate = round(eur_rate, 4)
+
+        return {
+            'usd': {'rate': usd_rate, 'symbol': usd.symbol, 'currency_id': usd.id},
+            'eur': {'rate': eur_rate, 'symbol': eur.symbol, 'currency_id': eur.id},
+        }
+
