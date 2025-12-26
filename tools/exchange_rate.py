@@ -1,3 +1,5 @@
+from urllib3.exceptions import InsecureRequestWarning
+from urllib3 import disable_warnings
 import requests
 import logging
 from bs4 import BeautifulSoup
@@ -15,12 +17,12 @@ class ExchangeRate:
             Returns:
                 tuple: (float: USD rate, float: EUR rate, date: rate date)
         """
+        disable_warnings(InsecureRequestWarning)
         bcv_url = "https://www.bcv.org.ve/"
         current_date = date.today()
 
         try:
-            response = requests.get(bcv_url, timeout=5)
-            response.raise_for_status()
+            response = requests.get(bcv_url, verify=False, timeout=5)
             soup = BeautifulSoup(response.text, "html.parser")
 
             usd_container = soup.find(id="dolar")

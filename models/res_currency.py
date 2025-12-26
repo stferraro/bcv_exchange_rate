@@ -35,7 +35,7 @@ class ResCurrency(models.Model):
             if not existing:
                 self.env['res.currency.rate'].create({
                     'currency_id': usd_currency.id,
-                    'company_rate': usd_rate,
+                    'company_rate': 1 / usd_rate if usd_rate else 0.0,
                     'name': today,
                     'company_id': company.id,
                 })
@@ -51,7 +51,7 @@ class ResCurrency(models.Model):
             if not existing:
                 self.env['res.currency.rate'].create({
                     'currency_id': eur_currency.id,
-                    'company_rate': eur_rate,
+                    'company_rate': 1 / eur_rate if eur_rate else 0.0,
                     'name': today,
                     'company_id': company.id,
                 })
