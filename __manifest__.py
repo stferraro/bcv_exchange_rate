@@ -12,7 +12,7 @@
     'license': 'OPL-1',
     'depends': [
         'base',
-        'account'
+        'l10n_ve',
     ],
     'external_dependencies': {
         'python': ['requests', 'beautifulsoup4', 'urllib3'],
