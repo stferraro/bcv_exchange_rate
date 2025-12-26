@@ -1,5 +1,3 @@
-from urllib3.exceptions import InsecureRequestWarning
-from urllib3 import disable_warnings
 import requests
 import logging
 from bs4 import BeautifulSoup
@@ -17,20 +15,20 @@ class ExchangeRate:
             Returns:
                 tuple: (float: USD rate, float: EUR rate, date: rate date)
         """
-        disable_warnings(InsecureRequestWarning)
-        URL = "https://www.bcv.org.ve/"
+        bcv_url = "https://www.bcv.org.ve/"
         current_date = date.today()
 
         try:
-            html_content = requests.get(URL, verify=False, timeout=5)
-            soup = BeautifulSoup(html_content.text, "html.parser")
+            response = requests.get(bcv_url, timeout=5)
+            response.raise_for_status()
+            soup = BeautifulSoup(response.text, "html.parser")
 
             usd_container = soup.find(id="dolar")
             eur_container = soup.find(id="euro")
 
             if not usd_container or not eur_container:
-                _logger.error("No se encontraron los contenedores de tasas en la página BCV.")
-                return (1.0, 1.0, current_date)
+                _logger.error("Could not find USD or EUR rate containers on BCV page.")
+                return None
 
             usd_value = (
                 usd_container.text.replace("\n", "").replace("USD", "").replace(",", ".").strip()
@@ -40,5 +38,5 @@ class ExchangeRate:
             )
             return float(usd_value), float(eur_value), current_date
         except Exception as e:
-            _logger.error(e)
-            return 1.0, 1.0, current_date
+            _logger.exception("Failed to fetch exchange rates from BCV: %s", e, exc_info=True)
+            return None

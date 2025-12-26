@@ -12,7 +12,11 @@
     'license': 'OPL-1',
     'depends': [
         'base',
+        'account'
     ],
+    'external_dependencies': {
+        'python': ['requests', 'beautifulsoup4', 'urllib3'],
+    },
     "data": [
 
         # cron
