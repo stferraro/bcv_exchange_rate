@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates xml:space="preserve">
+    <t t-name="CurrencyRate">
+        <Dropdown>
+            <button>
+                <i class="fa fa-lg fa-exchange" role="img" aria-label="Currency Rates"></i>
+                <span class="badge rounded-pill">
+                    <t t-esc="rate_usd_display"/> /
+                    <t t-esc="rate_eur_display"/>
+                </span>
+            </button>
+            <t t-set-slot="content">
+                <DropdownItem>
+                    <div t-on-click="_openCurrencyUSD">
+                        Currency - USD
+                    </div>
+                </DropdownItem>
+                <DropdownItem>
+                    <div t-on-click="_openCurrencyEUR">
+                        Currency - EUR
+                    </div>
+                </DropdownItem>
+            </t>
+        </Dropdown>
+    </t>
+</templates>
