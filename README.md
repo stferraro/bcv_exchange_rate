@@ -12,7 +12,7 @@ This module provides real-time integration of the Central Bank of Venezuela (BCV
   Fetches USD and EUR rates from the BCV website and updates the corresponding currency rates in Odoo.
 
 - **Systray Display**  
-  Shows USD and EUR rates in the Odoo systray with 4 decimal precision. Clicking on a currency opens its form view.
+  Shows USD and EUR rates in the Odoo systray with 2 decimal precision. Clicking on a currency opens its form view.
 
 - **Cron Job for Daily Updates**  
   Automatically updates rates every day using a scheduled cron job, ensuring the system always has the latest rates.
@@ -44,7 +44,7 @@ The **BCV Exchange Rate** module integrates official exchange rates from the Cen
 
 ### 3. Systray Integration
 - Adds a systray component displaying current USD and EUR rates.
-- Shows rates with four decimal precision, making them precise and easy to read.
+- Shows rates with two decimal precision, making them precise and easy to read.
 - Clicking on a currency opens its corresponding form view for further inspection or editing.
 
 ### 4. Scheduled Updates (Cron Job)
