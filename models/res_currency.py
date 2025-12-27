@@ -75,8 +75,8 @@ class ResCurrency(models.Model):
             ('name', '=', today)
         ], limit=1).inverse_company_rate if eur else 0.0
 
-        usd_rate = round(usd_rate, 4)
-        eur_rate = round(eur_rate, 4)
+        usd_rate = round(usd_rate, 2)
+        eur_rate = round(eur_rate, 2)
 
         return {
             'usd': {'rate': usd_rate, 'symbol': usd.symbol, 'currency_id': usd.id},

@@ -4,7 +4,7 @@
             BCV Exchange Rate
         </h1>
         <h2 class="oe_slogan">
-            Automatically fetch and apply official USD/EUR rates from the Venezuelan Central Bank (BCV) in your Odoo.
+            Automatically fetch and apply official USD/EUR rates from the Central Bank of Venezuela (BCV) in Odoo.
         </h2>
     </div>
 </section>
@@ -12,80 +12,57 @@
 <section class="oe_container oe_dark">
     <div class="oe_row oe_spaced">
         <div class="oe_span6">
-            <h3>Key Features</h3>
+            <h3>Main Features</h3>
             <ul>
                 <li>
                     <strong>Automatic Rate Update:</strong> Fetches the latest USD and EUR rates from BCV and updates Odoo currency rates daily.
+                    <img
+                        class="oe_picture oe_screenshot"
+                        src="resources/01.png"
+                        alt="Currency Rates List in Odoo"
+                        style="margin-top: 8px;"
+                    />
                 </li>
                 <li>
-                    <strong>Scheduled Cron Job:</strong> Includes a scheduled action to update rates automatically every minute, or manually if needed.
+                    <strong>Scheduled Cron Job:</strong> Automatically updates rates every day; manual update is also possible.
+                    <img
+                        class="oe_picture oe_screenshot"
+                        src="resources/02.png"
+                        alt="Scheduled Cron Job for Rate Updates"
+                        style="margin-top: 8px;"
+                    />
                 </li>
                 <li>
-                    <strong>Invoice Integration:</strong> Adds the <code>daily_rate</code> field to the invoice form, showing the current exchange rate for the invoice currency. This field is only visible if the invoice currency differs from the company currency.
+                    <strong>Systray Display:</strong> Shows current USD and EUR rates with 2 decimal precision in the Odoo systray.
+                    <img
+                        class="oe_picture oe_screenshot"
+                        src="resources/03.png"
+                        alt="Systray Display of Current Rates"
+                        style="margin-top: 8px;"
+                    />
                 </li>
                 <li>
-                    <strong>Multi-Company Support:</strong> Updates rates per company, ensuring correct values for each environment.
+                    <strong>Invoice Display:</strong> Rates in USD or EUR are reflected in invoices when the invoice currency differs from the company currency.
+                    <img
+                        class="oe_picture oe_screenshot"
+                        src="resources/04.png"
+                        alt="Invoice in USD showing Rates"
+                        style="margin-top: 8px;"
+                    />
+                    <img
+                        class="oe_picture oe_screenshot"
+                        src="resources/05.png"
+                        alt="Invoice in EUR showing Rates"
+                        style="margin-top: 8px;"
+                    />
+                </li>
+                <li>
+                    <strong>Multi-Company Support:</strong> Updates rates per company for correct values in multi-company environments.
                 </li>
                 <li>
                     <strong>Logging and Traceability:</strong> Logs every rate update and warns if BCV is unreachable.
                 </li>
             </ul>
-        </div>
-        <div class="oe_span6">
-            <img
-                class="oe_picture oe_screenshot"
-                src="../resources/01.png"
-                alt="Invoice Form with Daily Rate Field"
-            />
-            <p style="margin-top: 8px; color: #03296b;">
-                <strong>Invoice Integration:</strong> The <code>daily_rate</code> field is shown on the invoice form and displays the official BCV rate for the selected currency and date. It is only visible if the invoice currency is different from the company currency.
-            </p>
-        </div>
-        <div class="oe_span6">
-            <img
-                class="oe_picture oe_screenshot"
-                src="../resources/02.png"
-                alt="Scheduled Cron Job for Rate Update"
-            />
-            <p style="margin-top: 8px; color: #03296b;">
-                <strong>Automated Updates:</strong> The module includes a scheduled cron job that updates USD and EUR rates every minute. You can also trigger the update manually if needed.
-            </p>
-        </div>
-    </div>
-</section>
-
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan" style="color: #03296b">Currency Rate Management</h2>
-        <div class="oe_span6">
-            <img
-                class="oe_picture oe_screenshot"
-                src="../resources/03.png"
-                alt="Currency Rate List View"
-            />
-            <p style="margin-top: 8px; color: #03296b;">
-                <strong>Currency Rate List:</strong> View all currency rates in Odoo, including those updated by the BCV integration.
-            </p>
-        </div>
-        <div class="oe_span6">
-            <img
-                class="oe_picture oe_screenshot"
-                src="../resources/04.png"
-                alt="Currency Rate Form View - USD"
-            />
-            <p style="margin-top: 8px; color: #03296b;">
-                <strong>USD Rate Details:</strong> The form view for <code>res.currency.rate</code> shows the current USD rate as updated from BCV.
-            </p>
-        </div>
-        <div class="oe_span6">
-            <img
-                class="oe_picture oe_screenshot"
-                src="../resources/05.png"
-                alt="Currency Rate Form View - EUR"
-            />
-            <p style="margin-top: 8px; color: #03296b;">
-                <strong>EUR Rate Details:</strong> The form view for <code>res.currency.rate</code> shows the current EUR rate as updated from BCV.
-            </p>
         </div>
     </div>
 </section>
