@@ -93,7 +93,7 @@ flowchart TD
    - Update the apps list and install the module via Odoo interface.
 
 2. **Automatic Exchange Rate Updates**
-   - The module automatically fetches USD and EUR exchange rates from BCV every day.
+   - The module automatically fetches USD and EUR exchange rates from BCV every minute.
    - Rates are stored in the system and linked to the current company.
 
 3. **Systray Widget**
@@ -111,4 +111,4 @@ flowchart TD
 
 ## Maintenance and Support
 
-For maintenance and support, please contact [soltecferr](https://www.soltecferr.com), refer to the module's repository for updates and issue tracking, or send an email to gerferr83@soltecferr.com. 
+For maintenance and support, please contact [soltecferr](https://www.soltecferr.com) or refer to the module's repository for updates and issue tracking.
