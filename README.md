@@ -73,7 +73,6 @@ flowchart TD
     D --> G[Update systray component with latest rates]
     F --> G
     G --> H[End]
-
 ```
 
 ## Benefits
